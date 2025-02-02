@@ -3,24 +3,49 @@
 
 * {
     box-sizing: border-box; /* Aplica box-sizing a todos os elementos */
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: #1a1a1a; /* Fundo escuro */
     color: #ffffff; /* Texto branco */
     font-family: 'Open Sans', sans-serif; /* Fonte mais acessível */
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    width: 90%; /* Largura do container */
-    max-width: 400px; /* Largura máxima do container */
-    margin: 100px auto; /* Centraliza o container */
-    padding: 20px; /* Espaçamento interno */
-    background: #333333; /* Fundo do container */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 300px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.form-container {
+    flex: 1;
+    max-width: 400px;
+    background: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -80,40 +105,23 @@ button:hover {
 }
 
 /* Media Query para responsividade */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .container {
-        width: 90%; /* Aumenta a largura do container em telas menores */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .image-container {
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 400px) {
-    .container {
+    .form-container {
         width: 95%; /* Aumenta a largura do container em telas menores */
     }
 
     h1 {
         font-size: 1.5em; /* Reduz o tamanho do título */
     }
-}
-
-.button-group {
-    margin-top: 20px; /* Espaçamento superior */
-    text-align: center; /* Centraliza os botões */
-}
-
-.button {
-    display: inline-block; /* Exibe como bloco em linha */
-    padding: 10px 20px; /* Espaçamento interno */
-    background-color: #00ff00; /* Cor do botão */
-    color: #1a1a1a; /* Texto escuro */
-    border: none;
-    border-radius: 5px; /* Bordas arredondadas */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
-    margin: 0 10px; /* Margem entre os botões */
-}
-
-.button:hover {
-    background-color: #00cc00; /* Efeito hover */
-    transform: scale(1.05); /* Aumenta ligeiramente o botão */
 }
