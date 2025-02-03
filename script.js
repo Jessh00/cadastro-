@@ -1,4 +1,3 @@
-// Função para validar se todos os campos estão preenchidos
 function validarFormulario() {
     let valido = true;
     document.querySelectorAll('input').forEach(input => {

@@ -18,13 +18,11 @@ body {
     animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Animação de fade-in */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Container principal */
 .container {
     display: flex;
     align-items: center;
@@ -38,7 +36,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 255, 102, 0.3);
 }
 
-/* Imagem */
 .image-container {
     flex: 1;
     display: flex;
@@ -52,7 +49,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Formulário */
 .form-container {
     flex: 1;
     max-width: 400px;
@@ -70,7 +66,6 @@ h1 {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Estilização dos inputs */
 .form-group {
     margin-bottom: 15px;
 }
@@ -98,12 +93,10 @@ input:focus {
     outline: none;
 }
 
-/* Validação dos inputs */
 input.valid { border-color: green; }
 input.invalid { border-color: red; background-color: rgba(255, 0, 0, 0.2); }
 
-/* Botões */
-button {
+button, .pagina-secundaria .button {
     width: 100%;
     padding: 12px;
     background-color: #00cc66;
@@ -114,34 +107,54 @@ button {
     transition: background-color 0.3s, transform 0.2s;
     font-size: 1.2em;
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 204, 102, 0.3);
 }
 
-button:hover {
+button:hover, .pagina-secundaria .button:hover {
     background-color: #00994d;
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 204, 102, 0.5);
 }
 
-button:active { transform: scale(0.95); }
+button:active, .pagina-secundaria .button:active { transform: scale(0.95); }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         text-align: center;
         padding: 15px;
     }
-    .image-container { margin-bottom: 20px; }
-    .form-container { width: 90%; padding: 20px; }
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .image-container {
+        order: 2;
+        margin-top: 20px;
+    }
+    .image-container img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+    }
 }
 
 @media (max-width: 400px) {
-    .form-container { width: 100%; padding: 15px; }
-    h1 { font-size: 1.6em; }
-    label, input, button { font-size: 1em; }
+    .form-container {
+        width: 100%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+    label, input, button {
+        font-size: 1em;
+    }
 }
 
-/* Página secundária */
 .pagina-secundaria {
     display: flex;
     justify-content: center;
@@ -149,7 +162,6 @@ button:active { transform: scale(0.95); }
     height: 100vh;
 }
 
-/* Centralizando os botões */
 .pagina-secundaria .button-group {
     display: flex;
     flex-direction: column;
@@ -158,35 +170,11 @@ button:active { transform: scale(0.95); }
     margin-top: 20px;
 }
 
-/* Estilização dos botões */
-.pagina-secundaria .button {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #00ff00;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-    text-align: center;
-    width: 200px;
-    font-size: 1.1em;
-    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);
-    border: none;
-}
-
-.pagina-secundaria .button:hover {
-    background-color: #00cc00;
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.5);
-}
-
-.pagina-secundaria .button:active { transform: scale(0.95); }
-
-/* Removendo fundo da página secundária */
 .pagina-secundaria .container {
     background: none;
     box-shadow: none;
 }
 
-.pagina-secundaria .form-container { margin: 0 auto; }
+.pagina-secundaria .form-container {
+    margin: 0 auto;
+}
