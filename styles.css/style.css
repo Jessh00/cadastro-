@@ -1,20 +1,27 @@
 /* Importando uma fonte do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
 
 * {
-    box-sizing: border-box; /* Aplica box-sizing a todos os elementos */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #1a1a1a; /* Fundo escuro */
-    color: #ffffff; /* Texto branco */
-    font-family: 'Open Sans', sans-serif; /* Fonte mais acessível */
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
@@ -25,6 +32,9 @@ body {
     max-width: 900px;
     width: 100%;
     padding: 20px;
+    background: rgba(51, 51, 51, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 255, 102, 0.3);
 }
 
 .image-container {
@@ -34,94 +44,117 @@ body {
 }
 
 .image-container img {
-    max-width: 300px;
-    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
     flex-shrink: 0;
 }
 
 .form-container {
     flex: 1;
     max-width: 400px;
-    background: #333333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background: #222;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 255, 102, 0.4);
 }
 
 h1 {
-    color: #00ff00; /* Verde neon */
+    color: #00cc66;
     text-align: center;
-    margin-bottom: 20px; /* Espaçamento inferior */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .form-group {
-    margin-bottom: 15px; /* Espaçamento entre grupos de formulário */
+    margin-bottom: 15px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    color: #ffffff; /* Cor do texto */
+    color: #ffffff;
+    font-size: 1em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%; /* Ocupa 100% da largura do container */
-    padding: 10px; /* Aumentando o padding */
-    background-color: #444444; /* Fundo dos inputs */
-    border: 2px solid #00ff00; /* Borda verde neon */
-    color: #ffffff; /* Texto branco */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: border-color 0.3s; /* Transição suave */
+input {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 2px solid transparent;
+    color: #ffffff;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
 }
 
 input:focus {
-    border-color: #00cc00; /* Cor da borda ao focar */
+    border-color: #00cc66;
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
+    outline: none;
 }
 
 input.valid {
-    border-color: green; /* Borda verde para inputs válidos */
+    border-color: green;
 }
 
 input.invalid {
-    border-color: red; /* Borda vermelha para inputs inválidos */
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.2);
 }
 
 button {
-    width: 100%; /* Ocupa 100% da largura do container */
-    padding: 10px;
-    background-color: #00ff00; /* Botão verde neon */
-    color: #1a1a1a; /* Texto escuro */
+    width: 100%;
+    padding: 12px;
+    background-color: #00cc66;
+    color: #1a1a1a;
     border: none;
-    border-radius: 5px; /* Bordas arredondadas */
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Transição suave e transformação */
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #00cc00; /* Efeito hover */
-    transform: scale(1.05); /* Aumenta ligeiramente o botão */
+    background-color: #00994d;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 204, 102, 0.5);
 }
 
-/* Media Query para responsividade */
+button:active {
+    transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 15px;
     }
     .image-container {
         margin-bottom: 20px;
+    }
+    .form-container {
+        width: 90%;
+        padding: 20px;
     }
 }
 
 @media (max-width: 400px) {
     .form-container {
-        width: 95%; /* Aumenta a largura do container em telas menores */
+        width: 100%;
+        padding: 15px;
     }
 
     h1 {
-        font-size: 1.5em; /* Reduz o tamanho do título */
+        font-size: 1.6em;
+    }
+
+    label, input, button {
+        font-size: 1em;
     }
 }
+

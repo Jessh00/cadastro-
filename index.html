@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="image-container">
-            <img src="CartoonGamer1.png" alt="Imagem do lado esquerdo">
+            <img src="Cartoon00.png" alt="Imagem de um personagem gamer">
         </div>
         <div class="form-container">
             <h1>Cadastro de Usuário</h1>
@@ -33,32 +33,6 @@
             </form>
         </div>
     </div>
-
-    <script>
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.value.trim() === '') {
-                    this.classList.remove('valid');
-                    this.classList.add('invalid');
-                } else {
-                    this.classList.remove('invalid');
-                    this.classList.add('valid');
-                }
-            });
-        });
-
-        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-            if (nome === '' || email === '' || senha === '') {
-                alert('Por favor, preencha todos os campos.');
-            } else {
-                window.location.replace('dashboard.html');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
